@@ -105,5 +105,6 @@ print(f"A tó partvonala {partvonal_hossza(melysegek)} m hosszú")
 print("6. feladat")
 be_oszlop=int(input("Kérem az oszlop azonosítóját:") or "6")-1
 
-for sor_index, sor in enumerate(melysegek):
-    print(f"{sor_index+1:2d}","*"*sor[be_oszlop])
+with open("diagram.txt","w",encoding="utf-8") as fout:
+    for sor_index, sor in enumerate(melysegek):
+        print(f"{sor_index+1:2d}","*"*sor[be_oszlop], file=fout)
